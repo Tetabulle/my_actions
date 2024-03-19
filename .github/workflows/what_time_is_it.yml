@@ -1,0 +1,11 @@
+name: 'What time is it ?'
+run-name: ${{ github.actor }} is asking the date
+on: [push]
+jobs:
+    Get-The-Date:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Hello dear ${{ github.actor }}, you are asking the date..."
+            - run: echo "... Processing getting the date..."
+            - run: echo "Here is the actual date:"
+            - run: date
