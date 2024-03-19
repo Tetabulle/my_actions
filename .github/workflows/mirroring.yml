@@ -9,8 +9,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          sparse-checkout: .
-          filter: .github
+          fetch-tags: true
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
