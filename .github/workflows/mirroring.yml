@@ -2,9 +2,6 @@ name: Mirroring
 
 on: [push, delete]
 
-env:
-    TARGET_REPO_URL: git@github.com:EpitechPromo2028/B-DOP-200-NAN-2-1-bschocolatine-valentin1.guilbaud.git
-
 jobs:
   to_github:
     runs-on: ubuntu-latest
@@ -15,6 +12,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            $TARGET_REPO_URL
+            git@github.com:EpitechPromo2028/B-DOP-200-NAN-2-1-bschocolatine-valentin1.guilbaud.git
           ssh_private_key:                              # <-- use 'secrets' to pass credential information.
             ${{ secrets.GIT_SSH_PRIVATE_KEY }}
