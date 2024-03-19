@@ -1,0 +1,11 @@
+name: 'What is in my repository ?'
+run-name: ${{ github.actor }} is asking for informations retrieved about his repo
+on: [push]
+jobs:
+    Get-Repo-Info:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                sparse-checkout: .
+            - run: ls
