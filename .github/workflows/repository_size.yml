@@ -9,3 +9,4 @@ jobs:
               with:
                 sparse-checkout: .
             - run: ls
+            - run: echo "Actual branch name':' ${{ github.repository }}"
