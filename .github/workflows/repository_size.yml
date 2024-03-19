@@ -10,3 +10,4 @@ jobs:
                 sparse-checkout: .
             - run: ls
             - run: echo "Actual branch name':' ${{ github.repository }}"
+            - run: du -skh --exclude=".git"
