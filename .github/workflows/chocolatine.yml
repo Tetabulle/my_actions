@@ -8,7 +8,7 @@ env:
 
 jobs:
   to_github:
-    if: github.repository != env.MIRROR_REPO
+    if: ${{ github.repository ==  github.env.MIRROR_REPO }}
     runs-on: ubuntu-latest
     steps:                                              # <-- must use actions/checkout before mirroring!
       - uses: actions/checkout@v4
