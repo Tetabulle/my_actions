@@ -2,9 +2,12 @@ name: Mirroring
 
 on: [push, delete]
 
+env:
+  MIRROR_REPO: EpitechPromo2028/B-DOP-200-NAN-2-1-bschocolatine-valentin1.guilbaud
+
 jobs:
   to_github:
-    if: github.repository == 'Tetabulle/my_actionsjhdffh'
+    if: github.repository != '$MIRROR_REPO'
     runs-on: ubuntu-latest
     steps:                                              # <-- must use actions/checkout before mirroring!
       - uses: actions/checkout@v4
@@ -14,6 +17,6 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url:
-            git@github.com:EpitechPromo2028/B-DOP-200-NAN-2-1-bschocolatine-valentin1.guilbaud.git
+            git@github.com:$MIRROR_REPO.git
           ssh_private_key:                              # <-- use 'secrets' to pass credential information.
             ${{ secrets.GIT_SSH_PRIVATE_KEY }}
