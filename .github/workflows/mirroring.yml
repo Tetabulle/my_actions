@@ -4,6 +4,7 @@ on: [push, delete]
 
 jobs:
   to_github:
+    if: github.repository == 'Tetabulle/my_actions'
     runs-on: ubuntu-latest
     steps:                                              # <-- must use actions/checkout before mirroring!
       - uses: actions/checkout@v4
